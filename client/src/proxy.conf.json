@@ -1,0 +1,7 @@
+{
+    "/GitSearch/*": {
+      "target": "http://localhost:7222",
+      "secure": true,
+      "changeOrigin": true
+    }
+}

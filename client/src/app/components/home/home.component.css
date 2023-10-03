@@ -1,0 +1,62 @@
+.main {
+    /* display: flex;
+    flex-direction: column;
+    background-color: gray;
+    align-items: center;
+    justify-content:flex-start;
+    height: 1000px;
+    width: 100%; */
+    background-color: rgba(110, 139, 164, 0.543);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    height:3500px ;
+    width: 100%;
+}
+
+.result-card {
+    width: auto;
+    max-width: 100%;
+    height: 50px;
+    margin-bottom: 50px;
+    border-color:rgb(83, 80, 80);
+    text-align: left;
+    border-radius: 25px;
+    border: 5px ;
+
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.pages-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    font-family: 'Courier New', monospace;
+}
+
+.login-header{
+    display: flex;
+    flex-direction: row;
+  
+ 
+}
+
+.buttons {
+    margin: 5px 5px 5px 5px;
+}
+.header-button {
+    font-size:15px;
+  background-color: greenyellow;
+  margin: 1px 5px 5px 5px;
+}

@@ -1,0 +1,81 @@
+
+    <div class="header" >
+        <div *ngIf="isUserAuthenticated()" class="status">
+             <h3 style="margin: 7px 2px 2px 5px;">LOGGED IN</h3>
+             <label *ngIf="!isUserAuthenticated()"><a routerLink="/login">Login</a></label>
+           <div *ngIf="isUserAuthenticated()" style="margin-bottom: 5px;">
+             <button class="header-button" (click)="logOut()">Log out</button>
+          </div>
+        </div>
+
+       <div>
+         <button  class="header-button" (click)="ShowSavedBookmarks()">My Saved Bookmarks</button>
+       </div>
+    </div>
+
+   <div class="main">
+    <h1>Phoenix Git Repos API App</h1>
+
+    <h3>Search Repository in Git Hub</h3>
+    <input type="text" id="searchValue"  [(ngModel)]="searchValue" placeholder="search repo"/><br/>
+    <button (click)="Search($event)">Search</button><br/>
+    <button (click)="ClearSearch()">Clear Search</button>
+
+
+    <div *ngIf="showEmptyBookmarksLabel">
+        <label>There are no bookmarks saved</label>
+      </div>
+
+    <div class="results" *ngIf="(!isLoading && !showBookmarks)">
+       <div>
+        <div>
+            <div *ngFor="let result of searchResults" >
+                <div style="width: 320px;" class="card">
+                    <div ><br/>
+                        <span mat-icon-button (click)=addToBookmarks(result) style="float: right;">
+                            <mat-icon [ngClass]="result.bookmarked ? 'bi bi-bookmark-check-fill' : 'bi bi-bookmark'">favorite</mat-icon>
+                        </span>
+                        <label style="font-weight: bold;">Name:{{result.name}}</label><br>
+                        <img style="height: 50px;" [src]='result.owner.avatar_url' >
+                       </div>  
+                    </div>
+                </div>
+               
+        </div>
+       </div>
+    </div>
+<div *ngIf="hasLoad && !isLoading && !showBookmarks" class="pages-buttons">
+    <div *ngIf="!isFirstPage">
+        <button  style="background-color: greenyellow;margin: 10px 10px 10px 10px" (click)="PreviousPage()">Previous Page</button>
+    </div>
+    <button style="background-color: greenyellow; margin: 10px 10px 10px 10px" (click)="NextPage()">Next Page</button>
+   
+
+    
+</div>
+<div *ngIf="isLoading">
+    <h3>searching... '{{searchValue}}'</h3>
+   </div>
+<div *ngIf="showBookmarks">
+    <div *ngFor="let bookmark of bookmarks" >
+        <div style="width: 320px;" class="card">
+            <div ><br/>
+             <div>
+                <span mat-icon-button (click)=addToBookmarks(bookmark) style="float: right;">
+                    <mat-icon [ngClass]="bookmark.bookmarked ? 'bi bi-bookmark-check-fill' : 'bi bi-bookmark'">favorite</mat-icon>
+                </span>
+                <label style="font-weight: bold;">Name:{{bookmark.name}}</label><br>
+                <img style="height: 50px;" [src]='bookmark.owner.avatar_url' >
+               </div>  
+            </div>
+        </div>
+      
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+.container {
+    background-color: rgba(110, 139, 164, 0.543);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    height: 500px;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+   
+    box-shadow: 1 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+     width:25%;
+     margin-left: 37%;
+     
+     
+}
+
+.text {
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+
+}
+
+.invalid{
+    color: red;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
